@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.ListView?>
+<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.client_chat.HelloController">
+
+    <HBox fx:id="upperPanel">
+        <TextField HBox.hgrow="ALWAYS" promptText="Login" fx:id="loginField"/>
+        <PasswordField HBox.hgrow="ALWAYS" promptText="Password" fx:id="passwordField"/>
+        <Button fx:id="enter" text="OK" onAction="#auth"/>
+    </HBox>
+    <HBox VBox.vgrow="ALWAYS">
+        <VBox HBox.hgrow="ALWAYS">
+            <TextArea fx:id="textArea" editable="false" VBox.vgrow="ALWAYS"/>
+            <HBox fx:id="bottomPanel" managed="false" visible="false">
+                <TextField fx:id="textField" promptText="Input message..." HBox.hgrow="ALWAYS"
+                           onKeyPressed="#keyListener"/>
+                <Button fx:id="button" text="Send" onAction="#sendMessage" onKeyPressed="#keyListener"/>
+            </HBox>
+        </VBox>
+        <ListView fx:id="clientList" managed="false" visible="false"/>
+    </HBox>
+    <HBox>
+        <TextField fx:id="loginCreate" promptText="Login" HBox.hgrow="ALWAYS" visible="true"/>
+        <PasswordField fx:id="passwordCreate" promptText="Password" HBox.hgrow="ALWAYS" visible="true"/>
+        <TextField fx:id="nickCreate" promptText="Nickname" HBox.hgrow="ALWAYS" visible="true"/>
+        <Button fx:id="createAccount" text="Create account" HBox.hgrow="ALWAYS" onAction="#registration" onKeyPressed="#keyListenerCreateAccount" visible="true"/>
+    </HBox>
+</VBox>
+
